@@ -9,15 +9,15 @@ const CustomButton = ({variant, classes}) => {
     };
 
     const iconMapping = {
-      add: "Add ToDo",
+      add: "Add ToDo ",
       edit: <MdEdit fontSize={20} />,
       delete: <MdDelete fontSize={20} />,
-      deleteAll: "Delete All"
+      deleteAll: "Delete All 🗑️",
     };
 
     return (
       <button
-        className={`px-3 w-full py-2 flex justify-center rounded-md text-sm text-zinc-300 font-bold ${buttonStyles[variant]}`}
+        className={`px-3 py-2 flex justify-center rounded-md text-sm text-zinc-300 font-bold ${buttonStyles[variant]}`}
         
       >
         {iconMapping[variant]}

@@ -16,7 +16,7 @@ const AddTodo = () => {
             type="date"
             name="todo-date"
             id="todo-date"
-            className="bg-neutral-800 text-zinc-300 p-2 rounded-lg font-poppins outline outline-1 outline-zinc-500  text-sm w-[50%]"
+            className="bg-neutral-800 text-zinc-300 p-2 rounded-lg font-poppins outline outline-1 outline-zinc-500 text-sm w-[50%]"
           />
         </div>
         <CustomButton variant={"add"} />
