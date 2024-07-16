@@ -1,8 +1,8 @@
 import { MdAddCircle, MdEdit, MdDelete } from "react-icons/md";
 
-const Button = ({variant}) => {
+const CustomButton = ({variant}) => {
     const buttonStyles = {
-      add: "bg-indigo-600 hover:bg-indigo-700",
+      add: "bg-indigo-700 hover:bg-indigo-800",
       edit: "bg-green-600 hover:bg-green-700",
       delete: "bg-red-600 hover:bg-red-700",
     };
@@ -15,7 +15,7 @@ const Button = ({variant}) => {
 
     return (
       <button
-        className={`px-3 rounded-md text-sm text-zinc-300 font-semibold hover:bg-indigo-800 ${buttonStyles[variant]}`}
+        className={`px-3 rounded-md text-sm text-zinc-300 font-semibold ${buttonStyles[variant]}`}
         
       >
         {iconMapping[variant]}
@@ -23,4 +23,4 @@ const Button = ({variant}) => {
     );
 };
 
-export default Button;
+export default CustomButton
