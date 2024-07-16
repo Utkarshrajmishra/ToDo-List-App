@@ -11,7 +11,7 @@ const todoSlice = createSlice({
     reducers:{
         //reducer to add new ToDo Item
         addTodo: (state, action)=>{
-            state.push({task: action.payload.task, dueDate: action.payload.dueDate, status:false})
+            state.push({id:action.payload.id, task: action.payload.task, dueDate: action.payload.dueDate, status:false})
             localStorageSaveToDo(state);
         },
         //reducer to edit the existing ToDo item
@@ -26,7 +26,7 @@ const todoSlice = createSlice({
 
         //reducer to delete the ToDo
         deleteTodo: (state, action)=>{
-           state.splice(action.payload,1);
+           state.splice(action.payload.index,1);
            localStorageSaveToDo(state); 
         },
 
@@ -46,6 +46,6 @@ const todoSlice = createSlice({
 });
 
 
-export const {addTodo, editTodo, toggleToDo, deleteAllToDo} = todoSlice.actions;
+export const {addTodo, editTodo, toggleToDo, deleteTodo, deleteAllToDo} = todoSlice.actions;
 
 export default todoSlice.reducer;

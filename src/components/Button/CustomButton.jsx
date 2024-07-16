@@ -4,8 +4,9 @@ import { MdCheckCircle, MdEdit, MdDelete } from "react-icons/md";
  * CustomButton component renders a button with different styles and icons based on the variant prop.
  * @param {Object} props - The properties passed to the component.
  * @param {string} props.variant - The variant of the button, which determines its style and icon.
+ * @param {function} props.onClick - The function to call when the button is clicked.
  */
-const CustomButton = ({ variant }) => {
+const CustomButton = ({ variant, onClick }) => {
   // Define styles for different button variants
   const buttonStyles = {
     add: "bg-indigo-700 hover:bg-indigo-800",
@@ -28,6 +29,7 @@ const CustomButton = ({ variant }) => {
     <button
       // Apply styles based on the button variant
       className={`px-3 py-2 flex justify-center rounded-md text-sm text-zinc-300 font-bold ${buttonStyles[variant]}`}
+      onClick={onClick} // Attach onClick handler to the button element
     >
       {/* Display the appropriate icon or text based on the button variant */}
       {iconMapping[variant]}

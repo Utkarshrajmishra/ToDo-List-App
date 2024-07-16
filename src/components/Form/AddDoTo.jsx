@@ -1,6 +1,7 @@
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
+import {v4 as uuid} from 'uuid';
 import CustomButton from "../Button/CustomButton";
 import { useDispatch } from "react-redux";
 import { addTodo } from "../../redux/TodoSlice";
@@ -31,7 +32,8 @@ const AddTodo = () => {
    */
   const addToDoItem = (data) => {
     // Add the todo item
-    dispatch(addTodo({ task: data.todoItem, dueDate: data.dueDate }));
+    const id=uuid();
+    dispatch(addTodo({id:id, task: data.todoItem, dueDate: data.dueDate }));
 
     // Clear the form after submission
     reset();
@@ -71,7 +73,7 @@ const AddTodo = () => {
       </div>
 
       {/* Custom button to submit the form */}
-      <CustomButton variant={"add"} />
+      <CustomButton variant={"add"} onClick={null}/>
     </form>
   );
 };
