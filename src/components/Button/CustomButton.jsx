@@ -13,7 +13,7 @@ const CustomButton = ({ variant, onClick }) => {
     edit: "bg-blue-900 hover:bg-blue-950",
     delete: "bg-red-900 hover:bg-red-950",
     toggle: "bg-green-900 hover:bg-green-950",
-    deleteAll: "bg-red-700 hover:bg-red-800",
+   
   };
 
   // Map button variants to their respective icons and text
@@ -22,7 +22,7 @@ const CustomButton = ({ variant, onClick }) => {
     edit: <MdEdit fontSize={15} />,
     delete: <MdDelete fontSize={15} />,
     toggle: <MdCheckCircle fontSize={15} />,
-    deleteAll: "Delete All 🗑️",
+   
   };
 
   return (

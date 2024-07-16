@@ -16,10 +16,10 @@ const todoSlice = createSlice({
         },
         //reducer to edit the existing ToDo item
         editTodo: (state, action)=>{
-            //destructuring the payload
-            const {index, newToDo} = action.payload;
-            if(state[index]){
-                state[index]=newToDo;
+        
+            if(state[action.payload.index]){
+                state[action.payload.index].task=action.payload.task;
+                state[action.payload.index].dueDate=action.payload.dueDate;
                 localStorageSaveToDo(state);
             }
         },
@@ -37,11 +37,6 @@ const todoSlice = createSlice({
             }
             localStorageSaveToDo(state);
         },
-
-        //reducer to delete all the ToDo Items
-        deleteAllToDo:(state,action)=>{
-            localStorageSaveToDo([]);
-        }
     }
 });
 

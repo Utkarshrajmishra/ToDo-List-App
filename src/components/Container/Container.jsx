@@ -1,12 +1,9 @@
 import AddTodo from "../Form/AddDoTo";
 import CustomButton from "../Button/CustomButton";
 import ToDoTable from "../Table/ToDoTable";
-import { useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { localStorageGetToDo } from "../../localStorage/localStoage";
 //Functional component to create the container 
 const Container = () => {
-  
+
 
   return (
     <>
@@ -15,9 +12,6 @@ const Container = () => {
           ToDo List
         </h1>
         <AddTodo />
-        <section className="w-full flex justify-end">
-          <CustomButton variant={"deleteAll"}/>
-        </section>
         <ToDoTable/>
       </main>
     </>
