@@ -1,5 +1,6 @@
 import Container from "../components/Container/Container";
 
+//Functional Component for Home Page
 const Home=()=>{
     return (
       <>

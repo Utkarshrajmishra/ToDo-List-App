@@ -1,6 +1,7 @@
 import AddTodo from "../Form/AddDoTo";
 import CustomButton from "../Button/CustomButton";
-import ToastItem from "../Toast/ToastItem";
+
+//Functional component to create the container 
 const Container = () => {
   return (
     <>
@@ -12,7 +13,7 @@ const Container = () => {
         <section className="w-full flex justify-end">
           <CustomButton variant={"deleteAll"}/>
         </section>
-        <ToastItem/>
+
       </main>
     </>
   );

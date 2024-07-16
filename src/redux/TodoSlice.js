@@ -1,18 +1,22 @@
 import {createSlice} from "@reduxjs/toolkit"
 import { localStorageGetToDo, localStorageSaveToDo } from "../localStorage/localStoage";
 
+//getting the inital state from the local storage
 const initialState= localStorageGetToDo();
 
+//creating slice 
 const todoSlice = createSlice({
     name:'todos',
     initialState,
     reducers:{
+        //reducer to add new ToDo Item
         addTodo: (state, action)=>{
             state.push({task: action.payload.task, dueDate: action.payload.dueDate, status:false})
             localStorageSaveToDo(state);
         },
-
+        //reducer to edit the existing ToDo item
         editTodo: (state, action)=>{
+            //destructuring the payload
             const {index, newToDo} = action.payload;
             if(state[index]){
                 state[index]=newToDo;
@@ -20,11 +24,13 @@ const todoSlice = createSlice({
             }
         },
 
+        //reducer to delete the ToDo
         deleteTodo: (state, action)=>{
            state.splice(action.payload,1);
            localStorageSaveToDo(state); 
         },
 
+        //reducer to toggle between complete and pending status of ToDo Item
         toggleToDo:(state,action)=>{
             if(state[action.payload]){
                 state[action.payload].status=!state[action.payload].status;
@@ -32,6 +38,7 @@ const todoSlice = createSlice({
             localStorageSaveToDo(state);
         },
 
+        //reducer to delete all the ToDo Items
         deleteAllToDo:(state,action)=>{
             localStorageSaveToDo([]);
         }
