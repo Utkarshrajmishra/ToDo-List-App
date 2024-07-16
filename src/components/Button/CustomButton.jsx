@@ -1,4 +1,4 @@
-import { MdEdit, MdDelete } from "react-icons/md";
+import { MdCheckCircle, MdEdit, MdDelete } from "react-icons/md";
 
 /**
  * CustomButton component renders a button with different styles and icons based on the variant prop.
@@ -9,16 +9,18 @@ const CustomButton = ({ variant }) => {
   // Define styles for different button variants
   const buttonStyles = {
     add: "bg-indigo-700 hover:bg-indigo-800",
-    edit: "bg-green-700 hover:bg-green-800",
-    delete: "bg-red-700 hover:bg-red-800",
+    edit: "bg-blue-900 hover:bg-blue-950",
+    delete: "bg-red-900 hover:bg-red-950",
+    toggle: "bg-green-900 hover:bg-green-950",
     deleteAll: "bg-red-700 hover:bg-red-800",
   };
 
   // Map button variants to their respective icons and text
   const iconMapping = {
     add: "Add ToDo ",
-    edit: <MdEdit fontSize={20} />,
-    delete: <MdDelete fontSize={20} />,
+    edit: <MdEdit fontSize={15} />,
+    delete: <MdDelete fontSize={15} />,
+    toggle: <MdCheckCircle fontSize={15} />,
     deleteAll: "Delete All 🗑️",
   };
 
